@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
 import './App.css';
 
+
+
 function App() {
+  function send(){
+  
+    const requestOptions  = {
+    
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: data })
+    };
+    fetch('https://dleatkaruga.vercel.app/', requestOptions)
+      .then(response => response.json())
+      .then(data => this.setState({ postId: data.id }));
+  }
+  
+
+
+  const [data, setdata] = useState("");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>ram</h1>
+      <input type="email"  onChange={(e)=>setdata(e.target.value)}/>
+    <button onClick={send}>click</button>
     </div>
   );
 }
+
+
+
 
 export default App;
