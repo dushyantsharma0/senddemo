@@ -23,12 +23,13 @@ function App() {
   const [data, setdata] = useState("");
   return (
     <div className="App">
-      <h1>ram</h1>
+      <h1>Enter Your Correct Email</h1>
       <input type="email"  onChange={(e)=>setdata(e.target.value)}/>
     <button onClick={send}>click</button>
     </div>
   );
 }
+
 
 
 
